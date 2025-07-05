@@ -1,0 +1,31 @@
+{
+	"name": "cdk-template",
+	"version": "1.0.0",
+	"bin": {
+		"app": "bin/app.js"
+	},
+	"scripts": {
+		"build": "tsc",
+		"watch": "tsc -w",
+		"cdk": "cdk",
+		"cdk-diff-dev": "cdk context --clear && cdk diff -c config=dev",
+		"cdk-deploy-dev": "cdk context --clear && cdk deploy --all -c config=dev --require-approval never",
+		"cdk-destroy-dev": "cdk destroy --all --force -c config=dev",
+		"cdk-diff-staging": "cdk context --clear && cdk diff -c config=staging",
+		"cdk-deploy-staging": "cdk context --clear && cdk deploy -c --all config=staging --require-approval never",
+		"cdk-destroy-staging": "cdk destroy --all --force -c config=staging",
+		"cdk-diff-prod": "cdk context --clear && cdk diff -c config=prod",
+		"cdk-deploy-prod": "cdk context --clear && cdk deploy -c --all config=prod --require-approval never",
+		"cdk-destroy-prod": "cdk destroy --all --force -c config=prod"
+	},
+	"devDependencies": {
+		"@types/node": "22.7.9",
+		"aws-cdk": "2.1013.0",
+		"ts-node": "^10.9.2",
+		"typescript": "~5.6.3"
+	},
+	"dependencies": {
+		"aws-cdk-lib": "2.190.0",
+		"constructs": "^10.0.0"
+	}
+}
